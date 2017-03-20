@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>dk.kombit.serviceplatformen</groupId>
+    <artifactId>demoservice-client-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.3.4.RELEASE</version>
+    </parent>
+
+    <properties>
+        <java.version>1.7</java.version>
+        <cxf.version>2.7.14</cxf.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>spring-framework</id>
+            <name>Spring Framework</name>
+            <url>http://repo.spring.io/release/</url>
+        </repository>
+    </repositories>
+
+    <modules>
+        <module>demoservice-context-client</module>
+        <module>demoservice-token-client</module>
+    </modules>
+</project>
