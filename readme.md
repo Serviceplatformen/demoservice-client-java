@@ -43,31 +43,37 @@ but for Keystore-Explorer do the following:
 1. Open `src/main/resources/client.jks` for the relevant client with KeyStore Explorer or your favorite JKS manipulation tool.
 2. Remove the existing private-public key pair.
 3. Import your own key pair.
-* Tools -> Import Key Pair
-![alt tag](image/import.png)
-4. Choose the key type you are importing.
-![alt tag](image/type.png)
-5. Set a password and make sure the password for the key pair is the same as the password for the entire Java KeyStore file.
-![alt tag](image/password.png)
-   If you have changed the client.jks password, set the new password in the following places:
-    * In cxf.xml for both client types: 
-        ```
-        <http:conduit name="{http://serviceplatformen.dk/xml/wsdl/soap11/SP/Demo/1/}DemoPort.http-conduit">
-            <http:tlsClientParameters>
-                <sec:keyManagers keyPassword="**REPLACE_PASSWORD**">
-                    <sec:keyStore type="JKS" password="**REPLACE_PASSWORD**" resource="client.jks"/>
-                </sec:keyManagers>
-                <sec:trustManagers>
-                    <sec:keyStore type="JKS" password="Test1234" resource="trust.jks"/>
-                </sec:trustManagers>
-            </http:tlsClientParameters>
-            <http:client AutoRedirect="true" Connection="Keep-Alive"/>
-        </http:conduit>
-        ```
-    * In client.properties for token client only:
-        ```
-        org.apache.ws.security.crypto.merlin.keystore.password=**REPLACE_PASSWORD**
-        ```    
+    3. Tools -> Import Key Pair
+
+        ![alt tag](image/import.png)
+
+    4. Choose the key type you are importing.
+
+        ![alt tag](image/type.png)
+
+    5. Set a password and make sure the password for the key pair is the same as the password for the entire Java KeyStore file.
+    
+        ![alt tag](image/password.png)
+
+    6. If you have changed the client.jks password, set the new password in the following places:
+        * In cxf.xml for both client types: 
+            ```
+            <http:conduit name="{http://serviceplatformen.dk/xml/wsdl/soap11/SP/Demo/1/}DemoPort.http-conduit">
+                <http:tlsClientParameters>
+                    <sec:keyManagers keyPassword="**REPLACE_PASSWORD**">
+                        <sec:keyStore type="JKS" password="**REPLACE_PASSWORD**" resource="client.jks"/>
+                    </sec:keyManagers>
+                    <sec:trustManagers>
+                        <sec:keyStore type="JKS" password="Test1234" resource="trust.jks"/>
+                    </sec:trustManagers>
+                </http:tlsClientParameters>
+                <http:client AutoRedirect="true" Connection="Keep-Alive"/>
+            </http:conduit>
+            ```
+        * In client.properties for token client only:
+            ```
+            org.apache.ws.security.crypto.merlin.keystore.password=**REPLACE_PASSWORD**
+            ```    
 
 7. Rebuild by running `mvn clean install`
 
