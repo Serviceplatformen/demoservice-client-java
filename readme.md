@@ -43,19 +43,19 @@ but for Keystore-Explorer do the following:
 1. Open `src/main/resources/client.jks` for the relevant client with KeyStore Explorer or your favorite JKS manipulation tool.
 2. Remove the existing private-public key pair.
 3. Import your own key pair.
-    3. Tools -> Import Key Pair
-
+    1. Tools -> Import Key Pair
+    
         ![alt tag](image/import.png)
-
-    4. Choose the key type you are importing.
-
+        
+    2. Choose the key type you are importing.
+    
         ![alt tag](image/type.png)
-
-    5. Set a password and make sure the password for the key pair is the same as the password for the entire Java KeyStore file.
+        
+    3. Set a password and make sure the password for the key pair is the same as the password for the entire Java KeyStore file.
     
         ![alt tag](image/password.png)
-
-    6. If you have changed the client.jks password, set the new password in the following places:
+        
+    4. If you have changed the client.jks password, set the new password in the following places:
         * In cxf.xml for both client types: 
             ```
             <http:conduit name="{http://serviceplatformen.dk/xml/wsdl/soap11/SP/Demo/1/}DemoPort.http-conduit">
@@ -75,11 +75,11 @@ but for Keystore-Explorer do the following:
             org.apache.ws.security.crypto.merlin.keystore.password=**REPLACE_PASSWORD**
             ```    
 
-7. Rebuild by running `mvn clean install`
+4. Rebuild by running `mvn clean install`
 
 ## CONTENT
 * `readme.md`: This file
 * `run.sh`/`run.bat`: Runs the Java application
 * `/demoservice-context-client`: Contains the source code, contracts and resources of the InvocationContext and AuthorityContext client.
 * `/demoservice-token-client`: Contains the source code, contracts and resources of the token client.
-- `image\*` - images used for this readme.
+- `image/*` - images used for this readme.
