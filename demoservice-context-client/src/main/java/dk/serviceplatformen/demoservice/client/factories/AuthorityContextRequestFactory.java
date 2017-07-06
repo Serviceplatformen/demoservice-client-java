@@ -14,6 +14,9 @@ public class AuthorityContextRequestFactory {
     @Value("${municipality.cvr}")
     private String municipalityCvr;
 
+    @Value("${accounting.info}")
+    private String accountingInfo;
+
     @Value("${callers.service.call.identifier}")
     private String callersServiceCallIdentifier;
 
@@ -21,9 +24,9 @@ public class AuthorityContextRequestFactory {
     private String onBehalfOfUser;
 
     public CallDemoServiceRequestType getDemoServiceRequestType(String requestMessage) {
-        CallDemoServiceRequestType demoServiceRequestType = new CallDemoServiceRequestType();
-        AuthorityContextType authorityContextType = getAuthorityContext();
-        CallContextType callContextType = getCallContext();
+        final CallDemoServiceRequestType demoServiceRequestType = new CallDemoServiceRequestType();
+        final AuthorityContextType authorityContextType = getAuthorityContext();
+        final CallContextType callContextType = getCallContext();
         demoServiceRequestType.setAuthorityContext(authorityContextType);
         demoServiceRequestType.setCallContext(callContextType);
         demoServiceRequestType.setMessageString(requestMessage);
@@ -31,15 +34,16 @@ public class AuthorityContextRequestFactory {
     }
 
     private AuthorityContextType getAuthorityContext() {
-        AuthorityContextType authorityContextType = new AuthorityContextType();
+        final AuthorityContextType authorityContextType = new AuthorityContextType();
         authorityContextType.setMunicipalityCVR(municipalityCvr);
         return authorityContextType;
     }
 
     private CallContextType getCallContext() {
-        CallContextType callContextType = new CallContextType();
-        callContextType.setOnBehalfOfUser(onBehalfOfUser);
+        final CallContextType callContextType = new CallContextType();
+        callContextType.setAccountingInfo(accountingInfo);
         callContextType.setCallersServiceCallIdentifier(callersServiceCallIdentifier);
+        callContextType.setOnBehalfOfUser(onBehalfOfUser);
         return callContextType;
     }
 }

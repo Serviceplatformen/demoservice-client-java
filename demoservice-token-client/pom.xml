@@ -9,6 +9,7 @@
     </parent>
 
     <artifactId>demoservice-token-client</artifactId>
+    <name>DemoService Token Client</name>
     <packaging>jar</packaging>
 
     <properties>

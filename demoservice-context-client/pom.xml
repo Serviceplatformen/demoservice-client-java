@@ -9,6 +9,7 @@
     </parent>
 
     <artifactId>demoservice-context-client</artifactId>
+    <name>DemoService Context Client</name>
     <packaging>jar</packaging>
 
     <properties>

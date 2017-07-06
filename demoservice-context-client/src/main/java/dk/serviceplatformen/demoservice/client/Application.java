@@ -21,18 +21,18 @@ public class Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        Scanner reader = new Scanner(System.in);
+        final Scanner reader = new Scanner(System.in);
 
         while (true) {
             System.out.println("Press '1' to run InvocationContext test");
             System.out.println("Press '2' to run AuthorityContext test");
             System.out.println("Press 'q' to exit");
-            String input = reader.nextLine();
+            final String input = reader.nextLine();
             if("1".equals(input)) {
-                String message = getTestMessage(reader);
+                final String message = getTestMessage(reader);
                 applicationRunner.callWithInvocationContext(message);
             } else if ("2".equals(input)) {
-                String message = getTestMessage(reader);
+                final String message = getTestMessage(reader);
                 applicationRunner.callWithAuthorityContext(message);
             } else if ("q".equals(input)) {
                 return;

@@ -22,32 +22,31 @@ public class ApplicationRunner {
     @Autowired
     private AuthorityContextRequestFactory authorityContextRequestFactory;
 
-    private DemoPortType demoPortType;
+    private DemoPortType demoPort;
 
     public ApplicationRunner() {
         init();
     }
 
     private void init() {
-        DemoPortType demoPort = new DemoService().getDemoPort();
-        BindingProvider bp = (BindingProvider) demoPort;
-        bp.getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, ENDPOINT_URL);
-        demoPortType = (DemoPortType) bp;
+        final DemoPortType port = new DemoService().getDemoPort();
+        ((BindingProvider) port).getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, ENDPOINT_URL);
+        demoPort = port;
     }
 
     String callWithAuthorityContext(String message) {
-        CallDemoServiceRequestType request = authorityContextRequestFactory.getDemoServiceRequestType(message);
+        final CallDemoServiceRequestType request = authorityContextRequestFactory.getDemoServiceRequestType(message);
         return callDemoService(request);
     }
 
     String callWithInvocationContext(String message) {
-        CallDemoServiceRequestType request = invocationContextRequestFactory.getDemoServiceRequestType(message);
+        final CallDemoServiceRequestType request = invocationContextRequestFactory.getDemoServiceRequestType(message);
         return callDemoService(request);
     }
 
     private String callDemoService(CallDemoServiceRequestType request) {
         try {
-            CallDemoServiceResponseType response = demoPortType.callDemoService(request);
+            final CallDemoServiceResponseType response = demoPort.callDemoService(request);
             return response.getResponseString();
         } catch (Exception e) {
             System.out.println(e);

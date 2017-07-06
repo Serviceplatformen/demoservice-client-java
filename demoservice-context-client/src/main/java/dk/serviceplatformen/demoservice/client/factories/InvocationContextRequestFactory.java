@@ -22,6 +22,9 @@ public class InvocationContextRequestFactory {
     @Value("${user.uuid}")
     private String userUUID;
 
+    @Value("${accounting.info}")
+    private String accountingInfo;
+
     @Value("${callers.service.call.identifier}")
     private String callersServiceCallIdentifier;
 
@@ -42,6 +45,7 @@ public class InvocationContextRequestFactory {
         invocationContextType.setUserSystemUUID(userSystemUUID);
         invocationContextType.setServiceUUID(serviceUUID);
         invocationContextType.setUserUUID(userUUID);
+        invocationContextType.setAccountingInfo(accountingInfo);
         invocationContextType.setCallersServiceCallIdentifier(callersServiceCallIdentifier);
         invocationContextType.setOnBehalfOfUser(onBehalfOfUser);
         return invocationContextType;

@@ -16,27 +16,27 @@ public class ApplicationRunner {
     private static final String ENDPOINT_URL = "https://exttest.serviceplatformen.dk/service/SP/Demo/1";
 
     @Autowired
-    private TokenRequestFactory tokenContextRequestFactory;
-    private DemoPortType demoPortType;
+    private TokenRequestFactory tokenRequestFactory;
+    private DemoPortType demoPort;
 
     public ApplicationRunner() {
         init();
     }
 
     private void init() {
-        DemoPortType demoPort = new DemoService().getDemoPort();
-        BindingProvider bp = (BindingProvider) demoPort;
-        bp.getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, ENDPOINT_URL);
-        demoPortType = (DemoPortType) bp;
+        final DemoPortType port = new DemoService().getDemoPort();
+        ((BindingProvider) port).getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, ENDPOINT_URL);
+        demoPort = port;
     }
 
-    void callWithToken(String message) {
+    String callWithToken(String message) {
         try {
-            CallDemoServiceRequestType request = tokenContextRequestFactory.getDemoServiceRequestType(message);
-            CallDemoServiceResponseType response = demoPortType.callDemoService(request);
-            System.out.println("Service reply from demoService call with token security: " + response.getResponseString());
+            final CallDemoServiceRequestType request = tokenRequestFactory.getDemoServiceRequestType(message);
+            final CallDemoServiceResponseType response = demoPort.callDemoService(request);
+            return response.getResponseString();
         } catch (Exception e) {
             System.out.println(e);
+            return null;
         }
     }
 }

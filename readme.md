@@ -1,7 +1,7 @@
 ## PURPOSE
 
 The intent of this project is to:
-1. Make it easy to verify the connection to [KOMBIT Serviceplatformen](https://www.serviceplatformen.dk), using either of its supported security models.
+1. Make it easy to verify the connection to [KOMBIT Serviceplatformen](https://www.serviceplatformen.dk) using either of its supported security models.
 2. Serve as an example on how to implement and configure a client to KOMBIT Serviceplatformen for each of its supported
    security models.
 
@@ -34,16 +34,15 @@ The following information should be sufficient in order to compile and run the s
 
 * Password for current keystore `wRFsRP63H3kNEhDU`
 
-### CHANGE CERTIFICATE
+### CHANGE SERVICE AGREEMENT
 
-It may be desirable for a new Serviceplatformen user system to verify that a connection is possible using their own certificate.
-To replace the dedicated DemoService certificate with a different one, with another tool than Keystore-Explorer the steps will vary,
-but for Keystore-Explorer do the following:
+It may be desirable for a new Serviceplatformen user system to verify that a connection is possible using their own service agreement and certificate.
+To replace the dedicated DemoService certificate with a different one, follow the instructions below which use [Keystore Explorer](http://keystore-explorer.org/). 
 
-1. Open `src/main/resources/client.jks` for the relevant client with KeyStore Explorer or your favorite JKS manipulation tool.
-2. Remove the existing private-public key pair.
+1. Open `src/main/resources/client.jks` for the relevant client with KeyStore Explorer.
+2. Remove the existing public-private key pair.
 3. Import your own key pair.
-    1. Tools -> Import Key Pair
+    1. Tools ➞ Import Key Pair
     
         ![alt tag](image/import.png)
         
@@ -55,7 +54,7 @@ but for Keystore-Explorer do the following:
     
         ![alt tag](image/password.png)
         
-    4. If you have changed the client.jks password, set the new password in the following places:
+    4. If you have changed the client.jks password or certificate alias, update these files accordingly:
         * In cxf.xml for both client types: 
             ```
             <http:conduit name="{http://serviceplatformen.dk/xml/wsdl/soap11/SP/Demo/1/}DemoPort.http-conduit">
@@ -73,13 +72,33 @@ but for Keystore-Explorer do the following:
         * In client.properties for token client only:
             ```
             org.apache.ws.security.crypto.merlin.keystore.password=**REPLACE_PASSWORD**
+            org.apache.ws.security.crypto.merlin.keystore.alias=**REPLACE_KEY_ALIAS/NAME**
             ```    
 
-4. Rebuild by running `mvn clean install`
+To change the service agreement used, adapt the following files:
+
+* For calling with InvocationContext, update `invocationcontext.properties` to match the UUIDs reported by the
+  Serviceplatformen administration module:
+  ```
+  service.agreement.uuid=5037d099-29bd-421a-b746-d2f4772e5da5
+  user.system.uuid=17b22dc2-3f80-11e2-a32b-d4bed98c63db
+  service.uuid=d8a062c0-27d1-11e6-b67b-9e71128cae77
+  user.uuid=97782c1e-ec6a-4fcf-9c6c-cb030948d1d5
+  ```
+* For calling with AuthorityContext, update `authoritycontext.properties` to match the CVR number of the authority
+  that approved the service agreement:
+  ```
+  municipality.cvr=29189846
+  ```
+* For calling with KOMBIT Token, update `token.properties` to match the CVR number of the authority
+  that approved the service agreement:
+  ```
+  municipality.cvr=29189846
+  ```
 
 ## CONTENT
-* `readme.md`: This file
-* `run.sh`/`run.bat`: Runs the Java application
+* `readme.md`: This file.
+* `run.sh`/`run.bat`: Runs the Java application.
 * `/demoservice-context-client`: Contains the source code, contracts and resources of the InvocationContext and AuthorityContext client.
-* `/demoservice-token-client`: Contains the source code, contracts and resources of the token client.
-- `image/*` - images used for this readme.
+* `/demoservice-token-client`: Contains the source code, contracts and resources of the KOMBIT Token client.
+- `image/*`: Images used by this readme.

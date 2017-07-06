@@ -20,11 +20,10 @@ public class Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        Scanner reader = new Scanner(System.in);
-
+        final Scanner reader = new Scanner(System.in);
         while (true) {
             System.out.println("Enter test message or 'q' for exit");
-            String message = reader.nextLine();
+            final String message = reader.nextLine();
             if ("q".equals(message)) {
                 return;
             } else {
