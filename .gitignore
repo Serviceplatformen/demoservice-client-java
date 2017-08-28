@@ -22,3 +22,6 @@
 # Generated on build
 *.class
 target/
+
+# Temporary files
+client.log
