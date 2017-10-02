@@ -80,8 +80,8 @@ To change the service agreement used, adapt the following files:
 * For calling with InvocationContext, update `invocationcontext.properties` to match the UUIDs reported by the
   Serviceplatformen administration module:
   ```
-  service.agreement.uuid=5037d099-29bd-421a-b746-d2f4772e5da5
-  user.system.uuid=17b22dc2-3f80-11e2-a32b-d4bed98c63db
+  service.agreement.uuid=17a44431-526a-416c-bb66-bd262049e751
+  user.system.uuid=50be05bb-f31a-4673-9a93-d740e7397b16
   service.uuid=d8a062c0-27d1-11e6-b67b-9e71128cae77
   user.uuid=97782c1e-ec6a-4fcf-9c6c-cb030948d1d5
   ```
