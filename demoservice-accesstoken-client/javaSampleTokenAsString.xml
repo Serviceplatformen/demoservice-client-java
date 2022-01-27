@@ -1,0 +1,91 @@
+<Assertion xmlns="urn:oasis:names:tc:SAML:2.0:assertion"
+	ID="_0b2c1821-ae4c-477d-aeea-e5e2f069ceb8"
+	IssueInstant="2022-01-18T07:58:59.019Z" Version="2.0">
+	<Issuer
+		Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity">https://saml.adgangsstyring.eksterntest-stoettesystemerne.dk
+	</Issuer>
+	<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+		<SignedInfo>
+			<CanonicalizationMethod
+				Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+			<SignatureMethod
+				Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+			<Reference URI="#_0b2c1821-ae4c-477d-aeea-e5e2f069ceb8">
+				<Transforms>
+					<Transform
+						Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+					<Transform
+						Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+				</Transforms>
+				<DigestMethod
+					Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+				<DigestValue>mrDOiB5LnmKQ2vewOMZ3d8c8TRUUl+ThmH+Furthg44=
+				</DigestValue>
+			</Reference>
+		</SignedInfo>
+		<SignatureValue>le3SkMByYEOBggje7uSKoh/HUoo5xJYxFP2lzEgBuPf3mjcJHh0P0uPvPchTBXluDmqEJRBJiLHvIlZ0SZYuflBXhCoI57j/p0v1XYrGPXESwDJB9JqEZg9C1Jy2hA3KVO0bzQ7HU6c6H8g357+wamJ69KSV5XjsXJ1Wl093TbHLM8wKPV0BfUW4Xx44d+sTqQuzXr9ThUebt67IehNFjBxPpRgOThVPygbwNYEEdizvFnXUusiZF3OdkGsY2TGU5Cwlb8Hdvgv21taDBvdJynuxKR8E5lZdHmjFDo8tISHAV8HTfWyAW+QCm+4X35Z9Kkfh/0WIRCKKRt8AdqhVog==
+		</SignatureValue>
+		<KeyInfo>
+			<X509Data>
+				<X509Certificate>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
+				</X509Certificate>
+			</X509Data>
+		</KeyInfo>
+	</Signature>
+	<Subject>
+		<NameID
+			Format="urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName">SERIALNUMBER=CVR:19435075-FID:37671533 +
+			CN=kombit-sp-t-demo-serv (funktionscertifikat), O=KOMBIT A/S //
+			CVR:19435075, C=DK</NameID>
+		<SubjectConfirmation
+			Method="urn:oasis:names:tc:SAML:2.0:cm:holder-of-key">
+			<SubjectConfirmationData
+				xmlns:a="http://www.w3.org/2001/XMLSchema-instance"
+				NotBefore="2022-01-18T07:58:59.019Z"
+				NotOnOrAfter="2022-01-18T15:58:59.019Z"
+				Recipient="http://entityid.kombit.dk/service/demoservicerest/1"
+				a:type="KeyInfoConfirmationDataType">
+				<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+					<X509Data>
+						<X509Certificate>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
+						</X509Certificate>
+					</X509Data>
+				</KeyInfo>
+			</SubjectConfirmationData>
+		</SubjectConfirmation>
+	</Subject>
+	<Conditions NotBefore="2022-01-18T07:58:59.019Z"
+		NotOnOrAfter="2022-01-18T15:58:59.019Z">
+		<AudienceRestriction>
+			<Audience>http://entityid.kombit.dk/service/demoservicerest/1</Audience>
+		</AudienceRestriction>
+	</Conditions>
+	<AttributeStatement>
+		<Attribute Name="dk:gov:saml:attribute:CvrNumberIdentifier"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+			<AttributeValue>29189846</AttributeValue>
+		</Attribute>
+		<Attribute Name="dk:gov:saml:attribute:AssuranceLevel"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+			<AttributeValue>3</AttributeValue>
+		</Attribute>
+		<Attribute Name="dk:gov:saml:attribute:SpecVer"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+			<AttributeValue>DK-SAML-2.0</AttributeValue>
+		</Attribute>
+		<Attribute Name="dk:gov:saml:attribute:KombitSpecVer"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+			<AttributeValue>1.0</AttributeValue>
+		</Attribute>
+		<Attribute
+			Name="dk:gov:saml:attribute:Privileges_intermediate"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+			<AttributeValue>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48YnBwOlByaXZpbGVnZUxpc3QgeG1sbnM6YnBwPSJodHRwOi8vaXRzdC5kay9vaW9zYW1sL2Jhc2ljX3ByaXZpbGVnZV9wcm9maWxlIiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIj48UHJpdmlsZWdlR3JvdXAgU2NvcGU9InVybjpkazpnb3Y6c2FtbDpjdnJOdW1iZXJJZGVudGlmaWVyOjI5MTg5ODQ2Ij48UHJpdmlsZWdlPmh0dHA6Ly9zZXJ2aWNlcGxhdGZvcm1lbi5zZXJ2aWNlcGxhdGZvcm1lbi5kay9yb2xlcy9zZXJ2aWNlc3lzdGVtcm9sZS9kdW1teS8xPC9Qcml2aWxlZ2U+PC9Qcml2aWxlZ2VHcm91cD48L2JwcDpQcml2aWxlZ2VMaXN0Pg==</AttributeValue>
+		</Attribute>
+	</AttributeStatement>
+	<AuthnStatement AuthnInstant="2022-01-18T07:58:59.019Z">
+		<AuthnContext>
+			<AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:X509</AuthnContextClassRef>
+		</AuthnContext>
+	</AuthnStatement>
+</Assertion>
