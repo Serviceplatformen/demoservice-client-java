@@ -34,8 +34,8 @@
 
     <http:conduit name="{http://serviceplatformen.dk/xml/wsdl/soap11/SP/Demo/1/}DemoPort.http-conduit">
         <http:tlsClientParameters disableCNCheck="false">
-            <sec:keyManagers keyPassword="wRFsRP63H3kNEhDU">
-                <sec:keyStore type="JKS" password="wRFsRP63H3kNEhDU" resource="client.jks"/>
+            <sec:keyManagers keyPassword="1kKUWZ,91Zg1">
+                <sec:keyStore type="JKS" password="1kKUWZ,91Zg1" resource="client.jks"/>
             </sec:keyManagers>
             <sec:trustManagers>
                 <sec:keyStore type="JKS" password="Test1234" resource="trust.jks"/>

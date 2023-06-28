@@ -32,7 +32,7 @@ The following information should be sufficient in order to compile and run the s
 
 ### SETUP INFORMATION
 
-* Password for current keystore `wRFsRP63H3kNEhDU`
+* Password for current keystore `1kKUWZ,91Zg1`
 
 ### CHANGE SERVICE AGREEMENT
 
