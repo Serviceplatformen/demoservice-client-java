@@ -159,9 +159,9 @@
     <wsdl:service name="SecurityTokenService">
         <wsdl:port name="CertificateWSTrustBinding_IWSTrust13Sync"
                    binding="tns:CertificateWSTrustBinding_IWSTrust13Sync">
-            <soap12:address location="https://adgangsstyring.eksterntest-stoettesystemerne.dk/runtime/services/kombittrust/14/certificatemixed"/>
+            <soap12:address location="https://n2adgangsstyring.eksterntest-stoettesystemerne.dk/runtime/services/kombittrust/14/certificatemixed"/>
             <wsa10:EndpointReference>
-                <wsa10:Address>https://adgangsstyring.eksterntest-stoettesystemerne.dk/runtime/services/kombittrust/14/certificatemixed</wsa10:Address>
+                <wsa10:Address>https://n2adgangsstyring.eksterntest-stoettesystemerne.dk/runtime/services/kombittrust/14/certificatemixed</wsa10:Address>
             </wsa10:EndpointReference>
         </wsdl:port>
     </wsdl:service>
