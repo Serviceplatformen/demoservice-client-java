@@ -69,4 +69,13 @@
  
     
      <bean id="ClaimsCallbackHandler" class="dk.serviceplatformen.demoservice.client.sts.ClaimsCallbackHandler"/>
+
+    <http:conduit name="{http://schemas.microsoft.com/ws/2008/06/identity/securitytokenservice}CertificateWSTrustBinding_IWSTrust13Sync.http-conduit">
+        <http:tlsClientParameters disableCNCheck="false">
+            <sec:trustManagers>
+                <sec:keyStore type="JKS" password="Test1234" resource="trust.jks"/>
+            </sec:trustManagers>
+        </http:tlsClientParameters>
+        <http:client AutoRedirect="true" Connection="Keep-Alive"/>
+    </http:conduit>
 </beans>
